@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <h1>Stranger's Things</h1>
+      <h1>FitnessTrackr</h1>
     </header>
   );
 };

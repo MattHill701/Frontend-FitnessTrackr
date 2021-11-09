@@ -21,13 +21,13 @@ const NewPostForm = ({ setAllPosts, allPosts }) => {
           }
         }}
       >
-        <h2>Create Post</h2>
+        <h2>Create Activity</h2>
         <fieldset className="auth-component-input">
-          <label htmlFor="title">Title:</label>
+          <label htmlFor="name">Name:</label>
           <input
-            id="title"
+            id="name"
             type="text"
-            placeholder="Enter title"
+            placeholder="Enter name"
             value={title}
             onChange={(event) => {
               setTitle(event.target.value);
@@ -43,18 +43,6 @@ const NewPostForm = ({ setAllPosts, allPosts }) => {
             value={description}
             onChange={(event) => {
               setDescription(event.target.value);
-            }}
-          ></input>
-        </fieldset>
-        <fieldset className="auth-component-input">
-          <label htmlFor="title">Price:</label>
-          <input
-            id="price"
-            type="text"
-            placeholder="Enter price"
-            value={price}
-            onChange={(event) => {
-              setPrice(event.target.value);
             }}
           ></input>
         </fieldset>

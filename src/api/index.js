@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getToken } from "../auth";
-const BASE = "https://strangers-things.herokuapp.com/api/2106-UNF-RM-WEB-PT";
+const BASE = "https://fitnesstrac-kr.herokuapp.com/api/";
 
 // this is an example for an api call with axios
 export async function getUsers() {

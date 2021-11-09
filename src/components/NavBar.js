@@ -5,7 +5,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <div className="nav-bar">
       <Link className="nav-bar-link" to="/posts">
-        Posts
+        Workouts
       </Link>
       {isLoggedIn ? (
         <div className="auth-links">
