@@ -16,10 +16,8 @@ export async function getUsers() {
 export async function registerUser(username, password) {
   try {
     const { data } = await axios.post(`${BASE}/users/register`, {
-      user: {
-        username: username,
-        password: password
-      }
+      username: username,
+      password: password
     });
     return data;
   } catch (error) {
@@ -30,10 +28,8 @@ export async function registerUser(username, password) {
 export async function loginUser(username, password) {
   try {
     const { data } = await axios.post(`${BASE}/users/login`, {
-      user: {
-        username: username,
-        password: password
-      }
+      username: username,
+      password: password
     });
     return data;
   } catch (error) {
@@ -41,39 +37,12 @@ export async function loginUser(username, password) {
   }
 }
 
-export async function createPost(title, description, price) {
-  const myToken = getToken();
-  try {
-    const { data } = await axios.post(
-      `${BASE}/posts`,
-      {
-        post: {
-          title: title,
-          description: description,
-          price: price
-        }
-      },
-      {
-        headers: {
-          "Content-Type": "application/JSON",
-
-          Authorization: `Bearer ${myToken}`
-        }
-      }
-    );
-    return data;
-  } catch (error) {
-    throw error;
-  }
-}
-
-export async function getUserObject() {
+export async function getUser() {
   const myToken = getToken();
   try {
     const { data } = await axios.get(`${BASE}/users/me`, {
       headers: {
-        "Content-Type": "application/JSON",
-
+        "Content-Type": "application/json",
         Authorization: `Bearer ${myToken}`
       }
     });
@@ -83,24 +52,22 @@ export async function getUserObject() {
   }
 }
 
-export async function createMessages(post_id, content) {
-  const myToken = getToken();
+export async function getAllRoutines() {
   try {
-    const { data } = await axios.post(
-      `${BASE}/posts/${post_id}/messages`,
-      {
-        message: {
-          content: content
-        }
-      },
-      {
-        headers: {
-          "Content-Type": "application/JSON",
+    const { data } = await axios.get(`${BASE}/routines`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
 
-          Authorization: `Bearer ${myToken}`
-        }
-      }
-    );
+export async function createRoutines(name, goal, isPublic) {
+  try {
+    const { data } = await axios.post(`${BASE}/routines`, {
+      name: name,
+      goal: goal,
+      isPublic: isPublic
+    });
     console.log(data);
     return data;
   } catch (error) {
