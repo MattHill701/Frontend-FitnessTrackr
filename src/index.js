@@ -11,15 +11,7 @@ import {
 } from "react-router-dom";
 
 import {
-  Header,
-  Posts,
-  NavBar,
-  Register,
-  Login,
-  NewPostForm,
-  SinglePostPage,
-  SearchBar,
-  UserPage
+//stuff
 } from "./components";
 
 const App = () => {
@@ -73,25 +65,13 @@ const App = () => {
 
   return (
     <div id="App">
-      <Header />
-      <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Navigation />
       <Switch>
         <Route path="/register">
           <Register setIsLoggedIn={setIsLoggedIn} setIsLoading={setIsLoading} />
         </Route>
         <Route path="/login">
           <Login setIsLoggedIn={setIsLoggedIn} setIsLoading={setIsLoading} />
-        </Route>
-        <Route path="/posts/:postsId">
-          <SinglePostPage allPosts={allPosts} />
-        </Route>
-        <Route path="/posts">
-          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-          <Posts allPosts={allPosts} filteredPosts={filteredPosts} />
-          <NewPostForm setAllPosts={setAllPosts} allPosts={allPosts} />
-        </Route>
-        <Route path="/userpage">
-          <UserPage />
         </Route>
       </Switch>
     </div>
