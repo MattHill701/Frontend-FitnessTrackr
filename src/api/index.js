@@ -74,3 +74,38 @@ export async function createRoutines(name, goal, isPublic) {
     throw error;
   }
 }
+
+export async function getActivities() {
+  try {
+    const { data } = await axios.get(`${BASE}/activities`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(data);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+export async function createActivity(name, description) {
+  const myToken = getToken();
+
+  try {
+    const { data } = await axios.get(`${BASE}/activities`, {
+      activity: {
+        name: name,
+        description: description,
+      },
+      headers: {
+        "Content-Type": "application/JSON",
+
+        Authorization: `Bearer ${myToken}`,
+      },
+    });
+    console.log(data);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
