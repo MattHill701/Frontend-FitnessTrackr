@@ -3,6 +3,7 @@ import { SinglePost } from ".";
 import { Link } from "react-router-dom";
 
 const Posts = () => {
+  console.log(getAllRoutines())
   return (
     <div className="posts-main-container">
       <h1>Workout in Progress</h1>
